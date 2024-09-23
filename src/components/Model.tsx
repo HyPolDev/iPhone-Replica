@@ -1,13 +1,13 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import ModelView from "./ModelView"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { yellowImg } from "../utils"
 import * as THREE from "three"
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
-import { models, sizes } from "../constants";
-import { animateWithGsapTimeline } from "../utils/animations";
+import { models, sizes } from "../content";
+import { animateWithGsapTimeline } from "../utils/animations.ts";
 
 const Model = () => {
 
@@ -26,6 +26,25 @@ const Model = () => {
 
     const [smallRotation, setSmallRotation] = useState(0)
     const [largeRotation, setLargeRotation] = useState(0)
+
+    const tl = gsap.timeline()
+
+    useEffect(() => {
+        if (size == "large") {
+            animateWithGsapTimeline(ts, small, smallRotation, "#view1", "#view2", {
+                transform: "translateX(-100%)",
+                duration: 2
+            })
+        }
+        if (size == "small") {
+            animateWithGsapTimeline(ts, large, largeRotation, "#view1", "#view2", {
+                transform: "translateX(0)",
+                duration: 2
+            })
+        }
+
+    }, [size])
+
 
     useGSAP(() => {
         gsap.to("#heading", { y: 0, opacity: 1 })
@@ -69,11 +88,33 @@ const Model = () => {
                                 right: 0,
                                 overflow: 'hidden'
                             }}
-                            eventSource={document.getElementById('root')}
+                            eventSource={document.getElementById('root') || undefined}
                         >
                             <View.Port />
                         </Canvas>
-
+                    </div>
+                    <div className="mx-auto w-full">
+                        <p className="text-sm font-light text-center mb-5">{model.title}</p>
+                        <div className="flex-center">
+                            <ul className="color-container">
+                                {models.map((item, i) => (
+                                    <li
+                                        key={i}
+                                        className="w-6 h-6 rounded-full mx-2 cursor-pointer"
+                                        style={{ backgroundColor: item.color[0] }}
+                                        onClick={() => setModel(item)} />
+                                ))}
+                            </ul>
+                            <button className="size-btn-container">
+                                {sizes.map(({ label, value }) => (
+                                    <span key={label} className="size-btn"
+                                        style={{ backgroundColor: size == value ? "white" : "transparent", color: size === value ? "black" : "white" }}
+                                        onClick={() => setSize(value)}>
+                                        {label}
+                                    </span>
+                                ))}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
