@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# iPhone 15 landing page Replica
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a detailed replica of Apple's iPhone 15 Pro landing page, developed using React with TypeScript and styled with TailwindCSS. The site features dynamic animations powered by GSAP (Greensock Animation Platform) and 3D rendering through Three.js, which brings the iPhone 15 Pro models to life in various colors and configurations. 
+## <a>🛠️ Tech&Tolls used </a>
 
-Currently, two official plugins are available:
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="HTML5" /><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="CSS" /><img src="https://img.shields.io/badge/-GSAP-black?style=for-the-badge&logoColor=black&logo=greensock&color=88CE02" alt="greensock" /><img src="https://img.shields.io/badge/Three.js-000?style=for-the-badge&logo=threedotjs&logoColor=fff" alt="CSS" /><img src="https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="CSS" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## <a name="Local Deploy">🤸 Local Deploy</a>
 
-## Expanding the ESLint configuration
+**Prerequisites**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Make sure you have the following installed on your machine:
 
-- Configure the top-level `parserOptions` property like this:
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [NPM](https://www.npmjs.com/) 
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+**Cloning the Repository**
+
+```bash
+git clone https://github.com/HyPolDev/iPhone-Replica
+cd <<project-folder>>
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+**Installation**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Install the project dependencies using npm:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+**Running the Project**
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser to view the project.
+
+## ✒️ Autor
+
+- **Pol Montero** - Project Developer
+  - [GitHub](https://github.com/hypoldev) 
+
+## 🎓 Special Thanks
+
+- To **The youtube comunity** encouragement and knowledge to make me able to develop this last project.
+
+## 📄 Add Ons & Bugs
+
+- Project is 100% frontend just to show my capabilities to make reality a web design.
+- I have found no bugs from the dev side, if you find one, make sure to reach out.

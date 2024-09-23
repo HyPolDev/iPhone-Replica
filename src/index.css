@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: white;
   width: 100dvw;
@@ -16,6 +20,10 @@ body {
   background: #000;
   border-color: #3b3b3b;
   user-select: none;
+}
+
+::-webkit-scrollbar {
+  color: transparent;
 }
 
 canvas {
@@ -99,7 +107,7 @@ canvas {
   }
 
   .hiw-video {
-    @apply absolute w-[95%] h-[90%] rounded-[56px] overflow-hidden
+    @apply absolute w-[95%] h-[90%] rounded-[2%] overflow-hidden
   }
 
   .hiw-text-container {
