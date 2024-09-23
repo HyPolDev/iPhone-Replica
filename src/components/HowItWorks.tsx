@@ -39,7 +39,7 @@ const HowItWorks = () => {
                 y: 0
             }, // Start at 2x scale (double size)
             {
-                scale: 0.2, // End at normal size
+                scale: 0.6, // End at normal size
                 ease: "none",
                 y: 300,
                 scrollTrigger: {
@@ -96,7 +96,7 @@ const HowItWorks = () => {
                     <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p>
                 </div>
 
-                <div className="hiw-text-container mt-40">
+                <div className="hiw-text-container mt-60">
                     <div className="flex flex-1 justify-center flex-col">
                         <p className="hiw-text g_fadeIn">
                             A17 Pro is an entirely new class of iPhone chip that delivers our {' '}
