@@ -29,8 +29,8 @@ const ModelView = ({
         <View
             index={index}
             id={gsapType}
-            className={`w-full h-full absolute {index === 2  ? 'right-[-100%]' : ''}`}>
-            <ambientLight intensity={0.3} />
+            className={`w-full h-full absolute ${index === 2 ? 'right-[-100%]' : ''}`}>
+            <ambientLight intensity={8} />
             <PerspectiveCamera makeDefault position={[0, 0, 4]} />
             <Lights />
             <OrbitControls
@@ -44,7 +44,7 @@ const ModelView = ({
             <group ref={groupRef} name={`${index == 1} ? 'small' : 'large' `} position={[0, 0, 0]}>
                 <Suspense fallback={<Html><div>Loading...</div></Html>} >
                     <Iphone
-                        scale={index === 1 ? [15, 15, 15] : [20, 20, 20]}
+                        scale={index === 1 ? [15, 15, 15] : [17, 17, 17]}
                         item={item}
                         size={size} />
                 </Suspense>
